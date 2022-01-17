@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegTechnologies", "RegTechnologies\RegTechnologies.csproj", "{7D876453-B8B2-4288-A159-5A7B68994246}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D876453-B8B2-4288-A159-5A7B68994246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D876453-B8B2-4288-A159-5A7B68994246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D876453-B8B2-4288-A159-5A7B68994246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D876453-B8B2-4288-A159-5A7B68994246}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7924FE6E-4604-4DD8-8EE8-6F17689CCA00}
+	EndGlobalSection
+EndGlobal
