@@ -1,25 +1,14 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-
+﻿
 $(document).ready(function () {
     $.ajax({
         url: "/api/movies",
         success: function (result) {
-            console.log(result)
-
-            var html = '<ul>';
+            var html = '<p><b>' + 'List of movies' + '</b></p>';
+            html += '<ul>';
             for (var i = 0; i < result.length; i++) {
                 html += '<li><a href="#" onclick="showMovie(' + result[i].id + ')">' + result[i].title + '</a></li>';
-                //html += '<p>' + result[i].title + '</p>'
             }
-
             html += '</ul>'
-           
-
-            console.log(html)
 
             $('#listMovies').html(html);
         }
@@ -27,22 +16,32 @@ $(document).ready(function () {
 });
 
 function showMovie(id) {
-    alert(id)
 
     $.ajax({
         url: '/api/movies/' + id,
         success: function (result) {
-            console.log(result)
 
             var html = '';
+            html += '<p><b>' + 'Movie details' + '</b></p>';
+            html += '<p>' + 'Title: ' + result.title + '</p>';
+            html += '<p>' + 'Rating: ' + result.rating + '</p>';
+            html += '<p>' + 'Duration: ' + result.duration + ' min' + '</p>';
+            html += '<p>' + 'Year: ' + result.year + '</p>';
+            html += '<p>' + 'Popularity : ' + result.popularity + '</p>';
+            html += '<hr>';
+            html += '<p><b>' + 'Reviews' + '</b></p>';
+
             for (var i = 0; i < result.comments.length; i++) {
-                html += '<p>' +  result.comments[i].text + '</p>';
-                //html += '<p>' + result[i].title + '</p>'
+
+                var date = new Date(result.comments[i].date);
+
+                html += '<p>' + 'Author: ' + result.comments[i].author + '</p>';
+                html += '<p>' + 'Date: ' + date.toLocaleDateString() + '</p>';
+                html += '<p>' + 'Comment: ' + result.comments[i].text + '</p>';
+                html += '<hr>';
             }
 
             html += '<button onclick="hideMovie()">Back</button>'
-
-            console.log(html)
 
             $('#listMovies').hide();
             $('#listDetails').html(html);
