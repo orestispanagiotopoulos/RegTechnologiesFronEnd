@@ -7,6 +7,7 @@ using RegTechnologies.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using RegTechnologies.Services;
 
 namespace RegTechnologies
 {
@@ -31,8 +32,10 @@ namespace RegTechnologies
                 o.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MovieDB;Trusted_Connection=True;");
             });
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); 
-            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+            services.AddScoped<IMovieRepository, MovieRepository>();
+
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); 
+            //services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
