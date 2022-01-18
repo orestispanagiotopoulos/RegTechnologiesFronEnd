@@ -2,7 +2,6 @@
 using RegTechnologies.Models;
 using RegTechnologies.Services;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace RegTechnologies.Controllers
 {
@@ -19,8 +18,6 @@ namespace RegTechnologies.Controllers
         [HttpGet]
         public IActionResult GetMovies()
         {
-            // return Ok(MoviesDataStorage.Current.Movies);
-
             var movieEntities = _movieRepository.GetMovies();
 
             var result = new List<MovieWithoutCommentsDto>();
